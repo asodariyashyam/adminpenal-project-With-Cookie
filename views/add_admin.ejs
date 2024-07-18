@@ -1,0 +1,148 @@
+
+<%- include("header") %>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Form Elements</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Elements</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Add admin Form </h5>
+
+              <!-- General Form Elements -->
+              <form action="/adminInsertData" method="post" enctype="multipart/form-data">
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">enter fast name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="fname">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">enter last name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="lname">
+                    </div>
+                  </div>
+
+                <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">enter Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Select</label>
+                    <% var city=["surat", "rajkot"] %>
+                    <div class="col-sm-10">
+                      <select name="city" class="form-select" aria-label="Default select example">
+                        <option selected>city select</option>
+                        <% for(var c of city){ %>
+                            <option value="<%=c%>"><%=c%></option>
+                        <% } %>
+                      </select>
+                    </div>
+                </div>
+
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">gender</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male"> 
+                        <label class="form-check-label" for="gridRadios1">
+                            male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female">
+                        <label class="form-check-label" for="gridRadios2">
+                            female
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <div class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">hobby</legend>
+                    <div class="col-sm-10">
+  
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" name="hobby" value="reading books">
+                        <label class="form-check-label" for="gridCheck1">
+                            Reading books
+                        </label>
+                      </div>
+  
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck2" name="hobby" value="shopping">
+                        <label class="form-check-label" for="gridCheck2">
+                            Shopping
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck2" name="hobby" value="traveling">
+                        <label class="form-check-label" for="gridCheck2">
+                            Traveling
+                        </label>
+                      </div>
+  
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Textarea</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" style="height: 100px" name="messages"></textarea>
+                    </div>
+                  </div>
+                
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" id="formFile" name="image">
+                  </div>
+                </div>
+            
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Submit Button</label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+        
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <%- include("footer") %>
+ 

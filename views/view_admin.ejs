@@ -1,0 +1,79 @@
+<%- include("header") %>
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>General Tables</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Tables</li>
+          <li class="breadcrumb-item active">General</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">View Admin Data</h5>
+             
+              <!-- Active Table -->
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+
+                    <th scope="col">no</th>
+                    <th scope="col">name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">city</th>
+                    <th scope="col">gender</th>
+                    <th scope="col">hobby</th>
+                    <th scope="col">messages</th>
+                    <th scope="col">image</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% var no=1; for(var ad of viewData){ %>
+                    <tr>
+                      <th scope="row"><%= no++%></th>
+                      <td><%= ad.name %></td>
+                      <td><%= ad.email %></td>
+                      <td><%= ad.city %></td>
+                      <td><%= ad.gender %></td>
+                      <td><%= ad.hobby %></td>
+                      <td><%= ad.messages %></td>
+                      <td>
+                        <img src="<%= ad.image %>" alt="" height="100">
+                    </td>
+                    <td style="font-size: 25px;" >
+                      <a href="/deleteAdminRecord/<%= ad.id %>" class="btn btn-primary w-100">Delete</a>
+                      <a href="/updateAdminRecord?id=<%= ad.id %>" class="btn btn-primary w-100">Update</a>
+                  </td>
+                    </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              <!-- End Tables without borders -->
+
+            </div>
+          </div>
+
+          
+        </div>
+
+        
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+ 
+
+<%- include("footer") %>
